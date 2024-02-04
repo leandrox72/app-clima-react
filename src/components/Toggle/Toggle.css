@@ -1,0 +1,28 @@
+.app__toggle {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 5%;
+    right: 5%;
+    width: 100px;
+    height: 100px;
+    z-index: 100;
+    border-radius: 50%;
+}
+
+.app__toggle-icon {
+    width: 80px;
+    height: 80px;
+    color: var(--icon-color);
+    background-color: var(--icon-bg);
+    cursor: pointer;
+}
+
+.app__toggle-icon:first-child {
+    display: var(--icon-render1);
+}
+
+.app__toggle-icon:last-child {
+    display: var(--icon-render2);
+}

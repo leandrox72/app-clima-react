@@ -1,0 +1,27 @@
+.app__parallax {
+    background:var(--bg-color);
+    transition: 0.5s ease;
+}
+
+.parallax__layer {
+    width: 100%;
+    background-attachment: fixed;
+    height: 100vh;
+    background-position: center;
+    overflow: hidden;
+}
+
+#clouds3 {
+    background-image: url("src/assets/clouds3.png");
+    filter: opacity(12.5%);
+}
+
+#clouds2 {
+    background-image: url("src/assets/clouds2.png");
+    filter: opacity(25%);
+}
+
+#clouds1 {
+    background-image: url("src/assets/clouds1.png");
+    filter: opacity(50%);
+}

@@ -1,56 +1,33 @@
 import { useState } from "react"
+import { Search, Info, Toggle } from "./components"
+import './App.css'
+import { Parallax, ParallaxLayer } from "@react-spring/parallax" 
+
 
 export const App = () => {
     
-    const urlBase = 'https://api.openweathermap.org/data/2.5/weather'
-    const API_KEY = '57349625f6aee4a12e2a53dc6c73d3b7'
-    const difKelvin = 272.15;
-
-    const [ciudad, setCiudad] = useState('')
-    const [dataClima, setDataClima] = useState(null)
-
-    const handleCambioCiudad = (e) => {
-        setCiudad(e.target.value)
-    }
-    
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        if (ciudad.length > 0) {
-            fetchClima()
-        }
-    }
-
-    const fetchClima = async () => {
-        try {
-            const response = await fetch(`${urlBase}?q=${ciudad}&appid=${API_KEY}`)
-            const data = await response.json()
-            setDataClima(data)
-        }
-        catch(error) {
-            console.error('ERROR: ', error)
-        }
-    }
+    const [ dark, setDark ] = useState(false)
 
     return (
-        <div className="container">
-            <h1>Aplicacion Clima</h1>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text" 
-                    value={ciudad}
-                    onChange={handleCambioCiudad} 
-                />
-                <button type="submit">Buscar</button>
-            </form>
-            {
-                dataClima && (
-                    <div>
-                        <h2>{dataClima.name}</h2>
-                        <p>Temperatura: {parseInt(dataClima?.main?.temp - difKelvin)}°C</p>
-                        <img src={`https://openweathermap.org/img/wn/${dataClima.weather[0].icon}@2x.png`} />
-                    </div>
-                )            
-            }
+        <div className="app" theme={dark ? 'dark' : ''}>    
+            <Parallax pages={2} style={{ top: '0', left: '0' }} className="app__parallax">
+                <Toggle isDark={dark} handdleChange={() => setDark(!dark)} />
+                <ParallaxLayer offset={0} speed={-0.2}>
+                    <div className="parallax__layer bg"  id="clouds3"/>
+                </ParallaxLayer>
+                <ParallaxLayer offset={0} speed={-0.1}>
+                    <div className="parallax__layer bg"  id="clouds2"/>
+                </ParallaxLayer>
+                <ParallaxLayer offset={0} speed={-0.01}>
+                    <div className="parallax__layer bg"  id="clouds1"/>
+                </ParallaxLayer>
+                <ParallaxLayer offset={0} speed={0.25}>
+                    <Search />
+                </ParallaxLayer>
+                <ParallaxLayer offset={1} speed={0}>
+                    <Info />
+                </ParallaxLayer>
+            </Parallax>
         </div>
     )
 }

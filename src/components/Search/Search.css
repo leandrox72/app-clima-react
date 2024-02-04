@@ -1,0 +1,107 @@
+.app__search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background: transparent;
+    z-index: 100;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  color: transparent;
+  text-transform: uppercase;
+  font-weight: bold;
+  -webkit-text-stroke: 1px #fff;
+}
+
+form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  width: 400px;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  margin-right: 10px;
+  transition: 0.25s ease;
+}
+
+input[type="text"]:hover {
+  background: #eee;
+}
+
+button {
+  padding: 10px 30px;
+  background-color: var(--bg-btn-color);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: #fff;
+  color: var(--bg-btn-color);
+}
+
+h2 {
+  font-size: 25px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: var(--h2-color);
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: var(--p-color);
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+.app__search-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 650px) {
+  input[type="text"]{
+    width: 300px;
+  }
+
+  button {
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .app__search form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input[type="text"] {
+    width: 250px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+}
