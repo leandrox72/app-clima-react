@@ -12,13 +12,13 @@ export const App = () => {
         <div className="app" theme={dark ? 'dark' : ''}>    
             <Parallax pages={2} style={{ top: '0', left: '0' }} className="app__parallax">
                 <Toggle isDark={dark} handdleChange={() => setDark(!dark)} />
-                <ParallaxLayer offset={0} speed={-0.2}>
+                <ParallaxLayer offset={0} speed={-0.25}>
                     <div className="parallax__layer bg"  id="clouds3"/>
                 </ParallaxLayer>
-                <ParallaxLayer offset={0} speed={-0.1}>
+                <ParallaxLayer offset={0} speed={-0.15}>
                     <div className="parallax__layer bg"  id="clouds2"/>
                 </ParallaxLayer>
-                <ParallaxLayer offset={0} speed={-0.01}>
+                <ParallaxLayer offset={0} speed={-0.015}>
                     <div className="parallax__layer bg"  id="clouds1"/>
                 </ParallaxLayer>
                 <ParallaxLayer offset={0} speed={0.25}>

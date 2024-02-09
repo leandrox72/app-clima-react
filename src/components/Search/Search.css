@@ -12,10 +12,9 @@
 h1 {
   font-size: 40px;
   margin-bottom: 30px;
-  color: transparent;
-  text-transform: uppercase;
+  color: #fff;
   font-weight: bold;
-  -webkit-text-stroke: 1px #fff;
+  font-family: 'Montserrat Alternates';
 }
 
 form {
@@ -32,6 +31,7 @@ input[type="text"] {
   border-radius: 30px;
   margin-right: 10px;
   transition: 0.25s ease;
+  font-family: 'Montserrat Alternates';
 }
 
 input[type="text"]:hover {
@@ -47,6 +47,7 @@ button {
   cursor: pointer;
   transition: 0.25s ease;
   text-transform: uppercase;
+  font-family: 'Montserrat Alternates';
 }
 
 button:hover {
@@ -98,10 +99,14 @@ img {
 
   input[type="text"] {
     width: 250px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   h1 {
     font-size: 35px;
+  }
+
+  button {
+    padding: 12px 22px;
   }
 }
