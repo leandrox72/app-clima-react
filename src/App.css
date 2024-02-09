@@ -12,16 +12,16 @@
 }
 
 #clouds3 {
-    background-image: url("src/assets/clouds3.png");
+    background-image: url("assets/clouds3.png");
     filter: opacity(12.5%);
 }
 
 #clouds2 {
-    background-image: url("src/assets/clouds2.png");
+    background-image: url("assets/clouds2.png");
     filter: opacity(25%);
 }
 
 #clouds1 {
-    background-image: url("src/assets/clouds1.png");
+    background-image: url("assets/clouds1.png");
     filter: opacity(50%);
 }
