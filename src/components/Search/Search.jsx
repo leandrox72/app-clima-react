@@ -4,12 +4,13 @@ import { useState } from 'react'
 
 const Search = () => {
 
-    const urlBase = 'https://api.openweathermap.org/data/2.5/weather'
-    const API_KEY = '57349625f6aee4a12e2a53dc6c73d3b7'
+    const urlBase = import.meta.env.VITE_API_URL;
+    const API_KEY = import.meta.env.VITE_API_KEY;
     const difKelvin = 272.15;
 
-    const [ciudad, setCiudad] = useState('')
-    const [dataClima, setDataClima] = useState(null)
+    const [ciudad, setCiudad] = useState('');
+    const [dataClima, setDataClima] = useState(null);
+    const [errorCiudad, setErrorCiudad] = useState(false);
 
     const handleCambioCiudad = (e) => {
         setCiudad(e.target.value)
@@ -24,9 +25,18 @@ const Search = () => {
 
     const fetchClima = async () => {
         try {
+            //No creo que esta sea la forma mas optima de manejar el error
+            //404, pero funciona, asi que automaticamente no me importa...
+            setDataClima('')
+            setErrorCiudad(false)
             const response = await fetch(`${urlBase}?q=${ciudad}&appid=${API_KEY}`)
-            const data = await response.json()
-            setDataClima(data)
+            if (response.status === 404) {
+                setErrorCiudad(true)
+            }
+            else {
+                const data = await response.json()
+                setDataClima(data)
+            }    
         }
         catch(error) {
             console.error('ERROR: ', error)
@@ -50,6 +60,11 @@ const Search = () => {
                         <h2>{dataClima.name}</h2>
                         <p>Temperatura: {parseInt(dataClima?.main?.temp - difKelvin)}°C</p>
                         <img src={`https://openweathermap.org/img/wn/${dataClima.weather[0].icon}@2x.png`} />
+                    </div>
+                )}
+                {errorCiudad === true && (
+                    <div className='app__search-result'>
+                        <h3>Ingrese una Ciudad Valida</h3>
                     </div>
                 )}
         </div>
