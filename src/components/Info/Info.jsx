@@ -7,11 +7,10 @@ const Info = () => {
   return (
     <div className='app__info'>
       <div className='app__info-container'>
-        <h2>Aclaracion</h2>
-        <p>La API que da poder a esta aplicacion trabaja con una gran cantidad 
-          de ciudades de todo el globo, pero no con el 100%. Es probable que intente 
-          buscar alguna ciudad y no obtenga respuesta. Esta es una app simple, utilice 
-          las ciudades principales de cada pais.</p>
+        <h2>Clarification</h2>
+        <p>The API that powers this application works with a large number of cities around the globe, 
+          but not with 100%. It is likely that you will try to search for a city and get no response. 
+          This is a simple application, use it in the main cities of each country.</p>
         <div className='divisor'/>
         <div className='app__info-container-icons'>
           <BsInstagram className='info-icon' />

@@ -78,12 +78,29 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Montserrat Alternates';
+  background: var(--bg-info-cont-color);
+  padding: 2rem;
+  border-radius: 20px;
+  transition: 0.25s ease;
 }
 
-.app__search-result h3 {
+.app__search-result h2 {
   color: var(--h2-color);
   transition: 0.5s ease;
+  font-family: "Montserrat Alternates";
+}
+
+.app__search-result p {
+  font-family: "Poppins";
+  color: var(--p-color) ;
+  font-size: 16px;
+  padding-bottom: 0.25rem;
+}
+
+.img__cont {
+  padding: 0.1rem;
+  background: var(--bg-btn-color);
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 650px) {

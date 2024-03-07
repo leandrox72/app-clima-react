@@ -45,26 +45,28 @@ const Search = () => {
 
   return (       
         <div className="app__search">
-            <h1>Clima Center</h1>
+            <h1>Climate Center</h1>
                 <form onSubmit={handleSubmit}>
                     <input
                         type="text" 
                         value={ciudad}
                         onChange={handleCambioCiudad}
-                        placeholder="Ciudad de la que desea conocer el clima" 
+                        placeholder="City of which you want to know the climate..." 
                     />
                     <button type="submit">Buscar</button>
                 </form>
                 {dataClima && (
                     <div className='app__search-result'>
                         <h2>{dataClima.name}</h2>
-                        <p>Temperatura: {parseInt(dataClima?.main?.temp - difKelvin)}°C</p>
-                        <img src={`https://openweathermap.org/img/wn/${dataClima.weather[0].icon}@2x.png`} />
+                        <p>Temperature: {parseInt(dataClima?.main?.temp - difKelvin)}°C</p>
+                        <div className='img__cont'>
+                            <img src={`https://openweathermap.org/img/wn/${dataClima.weather[0].icon}@2x.png`} />
+                        </div>
                     </div>
                 )}
                 {errorCiudad === true && (
                     <div className='app__search-result'>
-                        <h3>Ingrese una Ciudad Valida</h3>
+                        <h3>Enter a Valid City</h3>
                     </div>
                 )}
         </div>

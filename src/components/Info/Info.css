@@ -21,20 +21,21 @@
     transition: 0.5s ease;
     padding: 2rem;
     text-align: center;
+    
 }
 
 .app__info-container h2 {
     text-transform: uppercase;
     color: var(--h2-color);
     margin-bottom: 15px;
-    font-family: 'Montserrat Alternates';;
+    font-family: 'Montserrat Alternates';
 }
 
 .app__info-container p {
     color: var(--p-color);
     font-size: 15px;
     margin-bottom: 20px;
-    font-family: 'Montserrat Alternates';
+    font-family: "Poppins";
 }
 
 .divisor {
